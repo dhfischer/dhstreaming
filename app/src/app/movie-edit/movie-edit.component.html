@@ -1,0 +1,45 @@
+<div class="container mt-3">
+  <mat-card>
+    <h2>Criar Novo Filme</h2>
+    <form (ngSubmit)="onSubmit()" #createForm="ngForm">
+      <div class="form-group">
+        <label for="title">Título:</label>
+        <input type="text" class="form-control" id="title" name="title" [(ngModel)]="movie.title" required>
+      </div>
+      <div class="form-group">
+        <label for="title">Ano:</label>
+        <input type="text" class="form-control" id="year" name="year" [(ngModel)]="movie.year" required>
+      </div>
+      <div class="form-group">
+        <label for="title">Poster: (Inserir Link)</label>
+        <input type="text" class="form-control" id="cover" name="cover" [(ngModel)]="movie.cover" required>
+      </div>
+      <div class="form-group">
+        <label for="title">URL Trailer:</label>
+        <input type="text" class="form-control" id="midia" name="midia" [(ngModel)]="movie.midia" required>
+      </div>
+      <div class="form-group">
+        <label for="title">Classificação Etária:</label>
+        <input type="text" class="form-control" id="age_rating" name="age_rating" [(ngModel)]="movie.age_rating" required>
+      </div>
+      <div class="form-group">
+        <label for="title">Elenco:</label>
+        <input type="text" class="form-control" id="cast" name="cast" [(ngModel)]="movie.cast" required>
+      </div>
+      <div class="form-group">
+        <label for="title">Gênero:</label>
+        <input type="text" class="form-control" id="genre" name="genre" [(ngModel)]="movie.genre" required>
+      </div>
+      <div class="form-group">
+        <label for="title">Data de Lançamento:</label>
+        <input type="text" class="form-control" id="release_date" name="release_date" [(ngModel)]="movie.release_date" required>
+      </div>
+      <div class="form-group">
+        <label for="description">Descrição:</label>
+        <textarea class="form-control" id="description" name="description" [(ngModel)]="movie.description" required></textarea>
+      </div>
+      <!-- Adicione outros campos do filme aqui, como ano, elenco, diretor, etc. -->
+      <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+  </mat-card>
+</div>

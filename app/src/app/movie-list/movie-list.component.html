@@ -1,0 +1,48 @@
+<div class="container mt-5">
+  <mat-card>
+
+    <!-- Título -->
+    <div class="row m-3">
+      <mat-card-title>Filmes Disponíveis</mat-card-title>
+    </div>
+
+    <!-- Botão "Adicionar Filme" -->
+    <div class="row m-3">
+      <button *ngIf="isAdminUser()" mat-raised-button color="primary" routerLink="/movie-create">Adicionar Filme</button>
+    </div>
+
+    <!-- Barra de Pesquisa -->
+    <div class="row justify-content-end m-3">
+      <div class="col-4">
+        <mat-form-field class="search-field">
+          <mat-label>Pesquisar</mat-label>
+          <input matInput type="text" [(ngModel)]="searchPattern" (keydown)="onSearchChange()">
+          <button *ngIf="searchPattern" matSuffix mat-icon-button aria-label="Limpar" (click)="clearSearch()">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <!-- Lista de Filmes -->
+    <div class="row m-3">
+      <ng-container *ngFor="let movie of movies">
+        <div class="col-4">
+          <a class="movie-frame movie" routerLink="/movie-details/{{movie.id}}">
+            <div class="movie">
+              <div class="cover">
+                <img [src]="movie.cover" class="img-fluid" alt="{{movie.title}} Cover" />
+              </div>
+              <div class="name">
+                <span class="title">{{movie.title}}</span>
+                <span class="year">({{movie.year}})</span>
+              </div>
+            </div>
+          </a>
+          <button *ngIf="isAdminUser()" mat-raised-button color="primary" [routerLink]="['/movie-edit', movie.id]">Editar</button>
+        </div>
+      </ng-container>
+    </div>
+
+  </mat-card>
+</div>

@@ -1,0 +1,75 @@
+<div class="row justify-content-center" *ngIf="movie">
+  <div class="col-12 mt-5">
+    <mat-card>
+
+      <!--   TITLE   -->
+      <div class="row m-5 title">
+        <div class="col">
+          <span class="name">{{movie.title}}</span>
+          <span class="year"> ({{movie.year}})</span>
+        </div>
+      </div>
+
+      <!--   BODY   -->
+      <div class="row m-5 content">
+
+        <!-- COVER -->
+        <div class="col-4 cover" (mouseenter)="showPlayIcon = true" (mouseleave)="showPlayIcon = false">
+          <img class="img-fluid" [src]="movie.cover" alt="{{movie.title}}">
+
+          <!-- Ícone de reprodução -->
+          <div class="play-icon" *ngIf="showPlayIcon">
+            <i class="fa fa-play-circle"></i>
+          </div>
+        </div>
+
+        <!--   CONTENT   -->
+        <div class="col-8">
+          <div class="row">
+
+            <!--   DESCRIPTION   -->
+            <div class="col-12 description">
+              "{{movie.description}}"
+            </div>
+
+            <!-- Espaçamento extra -->
+            <div class="col-12 mb-3"></div>
+
+            <!--   AGE RATING   -->
+            <div class="col-6">
+              <strong>Classificação Etária:</strong> {{movie.age_rating}}
+            </div>
+
+            <!--   CAST   -->
+            <div class="col-6 cast">
+              <strong>Elenco:</strong> {{movie.cast}}
+            </div>
+
+            <!--   DIRECTOR   -->
+            <div class="col-6">
+              <strong>Diretor:</strong> {{movie.director}}
+            </div>
+
+            <!--   GENRE   -->
+            <div class="col-6">
+              <strong>Gênero:</strong> {{movie.genre}}
+            </div>
+
+            <!--   RELEASE DATE   -->
+            <div class="col-6">
+              <strong>Data de Lançamento:</strong> {{movie.release_date | date: 'dd/MM/yyyy'}}
+            </div>
+
+            <div class="col-12">
+              <iframe width="560" height="315" [src]="safeVideoEmbedUrl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </mat-card>
+
+  </div>
+</div>
