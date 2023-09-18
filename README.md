@@ -26,4 +26,12 @@ Siga os passos abaixo para instalar e executar o projeto em sua máquina.
    ```
 
 1. Build o Docker
+    ```shell
+    docker-compose build
+    ```
+
+1. De run no Angular
+    ```shell
+    ng serve
+    ```
 
