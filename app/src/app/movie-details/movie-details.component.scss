@@ -1,0 +1,28 @@
+.title {
+  font-size: 40px;
+
+  .name {
+    font-weight: bold;
+  }
+  .year {
+    font-weight: lighter;
+  }
+}
+
+.content {
+  .description {
+    font-style: italic;
+    font-size: 20px;
+  }
+}
+
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px; /* Tamanho do ícone de reprodução */
+  color: #fff; /* Cor do ícone */
+  cursor: pointer;
+  z-index: 2; /* Para garantir que o ícone esteja acima da imagem */
+}

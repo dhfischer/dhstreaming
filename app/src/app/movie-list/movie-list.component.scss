@@ -1,0 +1,30 @@
+.toolbar {
+  margin: 0 100px;
+
+  .search-field {
+    width: 320px;
+  }
+}
+.movie-frame {
+  .movie {
+    margin: 20px;
+
+    .cover {
+      img {
+
+      }
+    }
+    .name {
+      text-align: center;
+      font-size: 18px;
+      margin: 10px;
+
+      .title {
+        font-weight: bold;
+      }
+      .year {
+
+      }
+    }
+  }
+}
