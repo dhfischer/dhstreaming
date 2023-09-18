@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+
+  streaming:
+    build: .
+    container_name: streaming
+    environment:
+      POSTGRES_HOST: postgres
+    ports:
+      - "8000:8000"
+    restart: always
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:13
+    container_name: postgres
+    environment:
+      POSTGRES_USER: dbuser
+      POSTGRES_DB: db
+      POSTGRES_PASSWORD: 123exemplo
+    ports:
+      - "5432:5432"
+    volumes:
+      - .data/postgres:/var/lib/postgresql/data
+    restart: always
+
+  dbadmin:
+    image: dpage/pgadmin4
+    container_name: dbadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "exemplo@email.com"
+      PGADMIN_DEFAULT_PASSWORD: "123exemplo"
+    ports:
+      - "16543:80"
+    restart: always
+    depends_on:
+      - postgres
