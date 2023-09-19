@@ -1,8 +1,8 @@
-# Título do Seu Projeto
+# Streaming Dhavi
 
 ## Descrição do Projeto
 
-Uma breve descrição do seu projeto.
+Serviço de streaming.
 
 ## Pré-requisitos
 
@@ -22,12 +22,22 @@ Siga os passos abaixo para instalar e executar o projeto em sua máquina.
 1. Clone o repositório:
 
    ```shell
-   git clone https://github.com/seu-usuario/seu-projeto.git
+   git clone https://github.com/dhfischer/dhstreaming.git
    ```
 
 1. Build o Docker
     ```shell
     docker-compose build
+    ```
+
+1. Suba o conteiner do Docker
+    ```shell
+    docker-compose up
+    ```
+
+1. Instale o node.js
+    ```shell
+    npm install
     ```
 
 1. De run no Angular
